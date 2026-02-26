@@ -1,103 +1,30 @@
-# Network Lab Inventory — 3 Dublin sites, EVPN/VXLAN multi-site
+# Network Lab Inventory — test environment (4 devices)
 # Credentials: set NETWORK_USERNAME and NETWORK_PASSWORD env vars
 
 devices:
 
-  # ── Superspines (cross-site, 4 total) ─────────────────────────────
-  superspine-01:
-    hostname: 192.168.1.1
-    platform: arista_eos
-    site: dublin-1
-    role: superspine
-
-  superspine-02:
+  # ── Spines ────────────────────────────────────────────────────────────
+  s1:
     hostname: 192.168.1.2
     platform: arista_eos
-    site: dublin-1
-    role: superspine
+    site: lab
+    role: spine
 
-  superspine-03:
+  s2:
     hostname: 192.168.1.3
     platform: arista_eos
-    site: dublin-2
-    role: superspine
+    site: lab
+    role: spine
 
-  superspine-04:
+  # ── Leafs ─────────────────────────────────────────────────────────────
+  l1:
     hostname: 192.168.1.4
     platform: arista_eos
-    site: dublin-3
-    role: superspine
-
-  # ── Spines (6 total, 2 per site) ──────────────────────────────────
-  spine-01:
-    hostname: 192.168.1.10
-    platform: arista_eos
-    site: dublin-1
-    role: spine
-
-  spine-02:
-    hostname: 192.168.1.11
-    platform: arista_eos
-    site: dublin-1
-    role: spine
-
-  spine-03:
-    hostname: 192.168.1.12
-    platform: arista_eos
-    site: dublin-2
-    role: spine
-
-  spine-04:
-    hostname: 192.168.1.13
-    platform: arista_eos
-    site: dublin-2
-    role: spine
-
-  spine-05:
-    hostname: 192.168.1.14
-    platform: arista_eos
-    site: dublin-3
-    role: spine
-
-  spine-06:
-    hostname: 192.168.1.15
-    platform: arista_eos
-    site: dublin-3
-    role: spine
-
-  # ── Leafs (6 total, 2 per site) ───────────────────────────────────
-  leaf-01:
-    hostname: 192.168.1.20
-    platform: arista_eos
-    site: dublin-1
+    site: lab
     role: leaf
 
-  leaf-02:
-    hostname: 192.168.1.21
+  l2:
+    hostname: 192.168.1.5
     platform: arista_eos
-    site: dublin-1
-    role: leaf
-
-  leaf-03:
-    hostname: 192.168.1.22
-    platform: arista_eos
-    site: dublin-2
-    role: leaf
-
-  leaf-04:
-    hostname: 192.168.1.23
-    platform: arista_eos
-    site: dublin-2
-    role: leaf
-
-  leaf-05:
-    hostname: 192.168.1.24
-    platform: arista_eos
-    site: dublin-3
-    role: leaf
-
-  leaf-06:
-    hostname: 192.168.1.25
-    platform: arista_eos
-    site: dublin-3
+    site: lab
     role: leaf
