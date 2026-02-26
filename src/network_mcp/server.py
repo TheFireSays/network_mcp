@@ -8,7 +8,10 @@ disconnects via the async context manager pattern.
 import json
 import logging
 
+from dotenv import load_dotenv
 from mcp.server.fastmcp import FastMCP
+
+load_dotenv()
 
 from network_mcp.inventory import Inventory
 from network_mcp.router import DeviceRouter
